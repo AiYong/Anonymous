@@ -1,0 +1,6 @@
+#ifndef AGLOBALSTATIC_H
+#define AGLOBALSTATIC_H
+
+
+
+#endif // AGLOBALSTATIC_H
