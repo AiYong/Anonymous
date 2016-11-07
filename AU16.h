@@ -1,7 +1,8 @@
-#ifndef AUNSIGNEDSHORT_H
-#define AUNSIGNEDSHORT_H
+#pragma once
 
-#include "ANumber.h"
+#include <Anonymous/AObject.h>
+
+namespace Anonymous {
 
 class AUShort : public ANumber
 {
@@ -12,72 +13,28 @@ public:
 
 public:
 
-  /**
-     * @brief LongValue
-     * @return
-     */
-    virtual AI8* ToI8() const = 0;
+  virtual i8 ToI8() const ;
 
-    /**
-     * @brief IntegerValue
-     * @return
-     */
-    virtual AI16* ToI16() const = 0;
+    virtual i16 ToI16() const ;
 
-    /**
-     * @brief ShortValue
-     * @return
-     */
-    virtual AI32* ToI32() const = 0;
+    virtual i32 ToI32() const ;
 
-    /**
-     *
-     *
-     */
-    virtual AI64* ToI64() const = 0;
+    virtual i64 ToI64() const ;
     
-    /**
-     * @brief LongValue
-     * @return
-     */
-    virtual AU8* To*8() const = 0;
+    virtual u8 ToU8() const ;
 
-    /**
-     * @brief IntegerValue
-     * @return
-     */
-    virtual AU16* ToU16() const = 0;
+    virtual u16 ToU16() const ;
 
-    /**
-     * @brief ShortValue
-     * @return
-     */
-    virtual AU32* ToU32() const = 0;
+    virtual u32 ToU32() const ;
 
-    /**
-     *
-     *
-     */
-    virtual AU64* ToU64() const = 0;
+    virtual u64 ToU64() const ;
 
-    /**
-     * @brief Float
-     * @return
-     */
-    virtual AFloat* ToFloat() const = 0;
+    virtual float ToFloat() const ;
 
-    /**
-     * @brief Double
-     * @return
-     */
-    virtual ADouble* ToDouble() const = 0;
+    virtual double ToDouble() const ;
 
-    /**
-     * @brief SizeInteger
-     * @return
-     */
-    virtual ASize* ToSize() = 0;
+    virtual size ToSize() const ;
 
 };
 
-#endif // AUNSIGNEDSHORT_H
+}

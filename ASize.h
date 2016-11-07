@@ -1,79 +1,36 @@
-#ifndef ASIZEINTEGER_H
-#define ASIZEINTEGER_H
+#pragma once
 
-#include "ANumber.h"
+#include <Anonymous/AObject.h>
+
+namespace Anonymous {
 
 class ASizeInteger : public ANumber
 {
     A_OBJECT()
 public:
 
-       /**
-     * @brief LongValue
-     * @return
-     */
-    virtual i8 ToI8() const = 0;
+      virtual i8 ToI8() const ;
 
-    /**
-     * @brief IntegerValue
-     * @return
-     */
-    virtual i16 ToI16() const = 0;
+    virtual i16 ToI16() const ;
 
-    /**
-     * @brief ShortValue
-     * @return
-     */
-    virtual i32 ToI32() const = 0;
+    virtual i32 ToI32() const ;
 
-    /**
-     *
-     *
-     */
-    virtual i64 ToI64() const = 0;
+    virtual i64 ToI64() const ;
     
-    /**
-     * @brief LongValue
-     * @return
-     */
-    virtual u8 ToU8() const = 0;
+    virtual u8 ToU8() const ;
 
-    /**
-     * @brief IntegerValue
-     * @return
-     */
-    virtual u16 ToU16() const = 0;
+    virtual u16 ToU16() const ;
 
-    /**
-     * @brief ShortValue
-     * @return
-     */
-    virtual u32 ToU32() const = 0;
+    virtual u32 ToU32() const ;
 
-    /**
-     *
-     *
-     */
-    virtual u64 ToU64() const = 0;
+    virtual u64 ToU64() const ;
 
-    /**
-     * @brief Float
-     * @return
-     */
-    virtual float ToFloat() const = 0;
+    virtual float ToFloat() const ;
 
-    /**
-     * @brief Double
-     * @return
-     */
-    virtual double ToDouble() const = 0;
+    virtual double ToDouble() const ;
 
-    /**
-     * @brief SizeInteger
-     * @return
-     */
-    virtual size ToSize() = 0;
+    virtual size ToSize() const ;
 
 };
 
-#endif // ASIZEINTEGER_H
+}

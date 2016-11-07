@@ -1,11 +1,34 @@
-#ifndef ADOUBLE_H
-#define ADOUBLE_H
+#pragma once
 
-#include "ANumber.h"
+#include <Anonymous/ANumber.h>
+
+namespace Anonymous {
 
 class ADouble : public ANumber
 {
     A_OBJECT()
+public:
+
+    static double MaxValue;
+
+    static double MinValue;
+
+    static double MinNormal;
+
+    static i32 MaxExponet;
+
+    static i32 MinExponet;
+
+    static double POSITIVE_INFINATE;
+
+    static double NEGATIVE_INFINATE;
+
+    static double SNAN;
+
+    static double QNAN;
+
+    static i32 Digits; 
+
 public:
 
     ADouble();
@@ -23,63 +46,31 @@ public:
 
 public:
 
-    /**
-     * @brief LongValue
-     * @return
-     */
-    virtual ALong* LongValue() const = 0;
+    virtual i8 ToI8() const ;
 
-    /**
-     * @brief IntegerValue
-     * @return
-     */
-    virtual AInteger* IntegerValue() const = 0;
+    virtual i16 ToI16() const ;
 
-    /**
-     * @brief ShortValue
-     * @return
-     */
-    virtual AShort* ShortValue() const = 0;
+    virtual i32 ToI32() const ;
 
-    /**
-     * @brief LongValue
-     * @return
-     */
-    virtual AULong* ULongValue() const = 0;
+    virtual i64 ToI64() const ;
+    
+    virtual u8 ToU8() const ;
 
-    /**
-     * @brief IntegerValue
-     * @return
-     */
-    virtual AUInteger* UIntegerValue() const = 0;
+    virtual u16 ToU16() const ;
 
-    /**
-     * @brief ShortValue
-     * @return
-     */
-    virtual AUShort* UShortValue() const = 0;
+    virtual u32 ToU32() const ;
 
-    /**
-     * @brief Float
-     * @return
-     */
-    virtual AFloat* Float() const = 0;
+    virtual u64 ToU64() const ;
 
-    /**
-     * @brief Double
-     * @return
-     */
-    virtual ADouble* Double() const = 0;
+    virtual float ToFloat() const ;
 
-    /**
-     * @brief SizeInteger
-     * @return
-     */
-    virtual ASizeInteger SizeInteger() = 0;
+    virtual double ToDouble() const ;
+
+    virtual size ToSize() const ;
 
 public:
 
 
 };
 
-#endif // ADOUBLE_H
+}
