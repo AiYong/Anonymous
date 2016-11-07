@@ -1,9 +1,13 @@
-#ifndef ARETURNVALUE_H
-#define ARETURNVALUE_H
+#pragma once
 
-#include "AObject.h"
-#include "AModifier.h"
 
+#include <Anonymous/AObject.h>
+
+namespace Anonymous {
+
+/**
+*
+*/
 class AReturnValue : public AObject
 {
 public:
@@ -15,34 +19,38 @@ public:
         Reference
     };
 
-    AReturnValue(AObject* ReturnValue,ValueType ValueType,int Modifier);
+    /**
+     *
+     */
+    AReturnValue(AObject* ReturnValue,ReturnValueType ValueType,int Modifier);
 
+    /**
+     *
+     */
     AReturnValue(AReturnValue const& rOther);
-
-    AReturnValue(AReturnValue &&rOther);
 
 public:
 
     /**
-     * @brief GetType
+     * @brief 返回返回值类型
      * @return
      */
     ReturnValueType GetType() const;
 
     /**
-     * @brief GetModifier
+     * @brief 返回返回值修饰符
      * @return
      */
     int GetModifier() const;
 
     /**
-     * @brief GetValue
+     * @brief 返回返回值
      * @return
      */
     AObject* GetValue() const;
 
     /**
-     * @brief GetValueType
+     * @brief 返回返回值类类型
      * @return
      */
     AClass* GetValueType() const;
@@ -50,8 +58,9 @@ public:
 private:
 
     AObject         *ReturnValue;
-    int             Modifier;
+    i32             Modifier;
     ReturnValueType ValueType;
+    
 };
 
-#endif // ARETURNVALUE_H
+}

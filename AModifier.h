@@ -1,25 +1,26 @@
-#ifndef AMODIFIER_H
-#define AMODIFIER_H
+#pragma once 
+
+namespace Anonymous {
 
 /**
  * @brief The AModifier enum
  */
 enum AModifier
 {
-    mPublic          = 1,
-    mProtected       = 2,
-    mPrivate         = 4,
-    mFinal           = 8,
-    mVirtual         = 16,
-    mOverride        = 32,
-    mMethodConst     = 64,
-    mNoExcept        = 128,
-    mInline          = 256,
-    mStatic          = 512,
-    mVolatile        = 1024,
-    mMutable         = 2048,
-    mTopLevelConst   = 4096,
-    mLowLevelConst   = 8192
+    Public          = 1,
+    Protected       = 2,
+    Private         = 4,
+    Final           = 8,
+    Virtual         = 16,
+    Override        = 32,
+    MethodConst     = 64,
+    NoExcept        = 128,
+    Inline          = 256,
+    Static          = 512,
+    Volatile        = 1024,
+    Mutable         = 2048,
+    TopLevelConst   = 4096,
+    LowLevelConst   = 8192
 };
 
-#endif // AMODIFIER_H
+}

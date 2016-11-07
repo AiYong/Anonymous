@@ -1,17 +1,15 @@
-#ifndef AFIELD_H
-#define AFIELD_H
+#pragma once
 
-#include "AObject.h"
-#include "AString.h"
-#include "AModifier.h"
+#include <Anonymouse/AObject.h>
 
+namespace Anonymous {
 
 class AClass;
+class AString;
 class AAnnotation;
 
-
 /**
- * @brief The AField class
+ * @brief Field类
  */
 class AField : public AObject
 {
@@ -61,16 +59,21 @@ public:
      * @brief 返回字段修饰类型。
      * @return
      */
-    virtual int GetModifiers() const = 0;
+    virtual i32 GetModifiers() const = 0;
 
 
 public:
 
     /**
+     * @brief 测试类的字段是否被指定注解类注解
+     */
+    virtual bool Contain(AClass *pAnnotationClass) = 0;
+
+    /**
      * @brief 返回字段注解数量。
      * @return
      */
-    virtual size_t GetAnnotationCount() = 0;
+    virtual size GetAnnotationCount() = 0;
 
     /**
      * @brief 返回指定类类型的注解。
@@ -83,13 +86,13 @@ public:
      * @brief 返回注解开始迭代器
      * @return
      */
-    virtual AnnotationIterator AnnotationBegin() = 0;
+    virtual AnnotationIterator GetAnnotationBegin() = 0;
 
     /**
      * @brief 返回注解结束迭代器
      * @return
      */
-    virtual AnnotationIterator AnnotationEnd() = 0;
+    virtual AnnotationIterator GetAnnotationEnd() = 0;
 
 
 public:
@@ -116,4 +119,17 @@ public:
 
 };
 
-#endif // AFIELD_H
+
+template<typename ValueT>
+bool GetFieldValue(AObject *Object,AField *Field,ValueT &Value)
+{
+    return false;
+}
+
+template<typename ObjectT,ValueT>
+bool SetFieldValue(ObjectT *Object，AField *Field ,ValueT const& Value )
+{
+    return false;
+}
+
+}

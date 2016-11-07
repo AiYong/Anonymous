@@ -1,9 +1,9 @@
-#ifndef AOBJECT_H
-#define AOBJECT_H
+#pragma once 
 
-#include <functional>
+namespace Anonymous {
 
-#include "AObjDefs.h"
+#include <Anonymous/AObjDefs.h>
+#include <Anonymous/APlatform.h>
 
 class AClass;
 
@@ -22,23 +22,23 @@ public:
     AObject();
 
     /**
-     * @brief AObject
+     * @brief 拷贝构造
      */
     AObject(AObject const&);
 
     /**
-     * @brief AObject
+     * @brief 移动构造
      */
     AObject(AObject&&);
 
     /**
-     * @brief operator =
+     * @brief 拷贝赋值
      * @return
      */
     AObject& operator=(AObject const&);
 
     /**
-     * @brief operator =
+     * @brief 移动赋值
      * @return
      */
     AObject& operator=(AObject&&);
@@ -50,4 +50,5 @@ public:
 
 };
 
-#endif // AOBJECT_H
+
+}

@@ -1,41 +1,30 @@
-#ifndef ACONSTRUCTOR_H
-#define ACONSTRUCTOR_H
+#pragma once
 
 #include <initializer_list>
 
-#include "AObject.h"
+#include <Anonymous/AObject.h>
 
-class AConstructor : public AObject
+namespace Anonymous {
+
+/**
+* @brief 封装类的默认构造函数
+*/
+class ADefaultConstructor : public AObject
 {
     A_OBJECT()
 public:
 
-    ~AConstructor()
+    ~ADefaultConstructor()
     {
     }
 
 public:
 
-    enum ConstructorType {
-        Defualt,
-        Copy,
-        Move,
-        UserDefinition
-    };
-
-public:
-
-    /**
-     * @brief GetType
-     * @return
-     */
-    virtual ConstructorType GetType() const;
-
     /**
      * @brief Call
      * @return
      */
-    virtual AObject* Call(std::initializer_list<AObject*> lParams) = 0;
+    virtual AObject* Call() = 0;
 
 };
 
@@ -81,4 +70,4 @@ public:
 
 };
 
-#endif // ACONSTRUCTOR_H
+}

@@ -1,14 +1,11 @@
-#ifndef ACLASS_H
-#define ACLASS_H
+#pragma once 
 
-
-#include "AObject.h"
-
-#include "AField.h"
-#include "AMethod.h"
-#include "AOperator.h"
-#include "AConstructor.h"
-#include "ADestructor.h"
+#include <Anonymous/AObject.h>
+#include <Anonymous/AField.h>
+#include <Anonymous/AMethod.h>
+#include <Anonymous/AOperator.h>
+#include <Anonymous/ADestructor.h>
+#include <Anonymous/AConstructor.h>
 
 class AString;
 class AClassLoader;
@@ -64,19 +61,19 @@ public:
      * @brief 返回基类数量
      * @return
      */
-    virtual size_t GetBaseCount() const = 0;
+    virtual size GetBaseCount() const = 0;
 
     /**
      * @brief 返回基类开始迭代器
      * @return
      */
-    virtual AClassIterator BaseBegin() const = 0;
+    virtual AClassIterator GetBaseBegin() const = 0;
 
     /**
      * @brief 返回基类结束迭代器
      * @return
      */
-    virtual AClassIterator BaseEnd() const = 0;
+    virtual AClassIterator GetBaseEnd() const = 0;
 
 public:
 
@@ -85,19 +82,19 @@ public:
      * 返回值包括Public、Protected和Private字段
      * @return
      */
-    virtual size_t GetDeclaredFieldCount() const = 0;
+    virtual size GetDeclaredFieldCount() const = 0;
 
     /**
      * @brief 返回字段开始迭代器
      * @return
      */
-    virtual AFieldIterator DeclaredFieldBegin() const = 0;
+    virtual AFieldIterator GetDeclaredFieldBegin() const = 0;
 
     /**
      * @brief 返回字段结束迭代器
      * @return
      */
-    virtual AFieldIterator DeclaredFieldEnd() const = 0;
+    virtual AFieldIterator GetDeclaredFieldEnd() const = 0;
 
 public:
 
@@ -112,7 +109,7 @@ public:
      * @brief 返回声明的构造函数数量
      * @return
      */
-    virtual size_t GetDeclaredConstructorCount() const = 0;
+    virtual size GetDeclaredConstructorCount() const = 0;
 
     /**
      * @brief 返回指定类型的构造函数。
@@ -133,13 +130,13 @@ public:
      * @brief
      * @return
      */
-    virtual AConstructorIterator ConstructorBegin() const;
+    virtual AConstructorIterator GetConstructorBegin() const;
 
     /**
      * @brief ConstructorEnd
      * @return
      */
-    virtual AConstructorIterator ConstructorEnd() const;
+    virtual AConstructorIterator GetConstructorEnd() const;
 
 public:
 
@@ -175,19 +172,19 @@ public:
      * @brief GetOperatorCount
      * @return
      */
-    virtual size_t GetOperatorCount() const = 0;
+    virtual size GetOperatorCount() const = 0;
 
     /**
      * @brief OperatorBegin
      * @return
      */
-    virtual AOperatorIterator OperatorBegin() const = 0;
+    virtual AOperatorIterator GetOperatorBegin() const = 0;
 
     /**
      * @brief OperatorEnd
      * @return
      */
-    virtual AOperatorIterator OperatorEnd() const = 0;
+    virtual AOperatorIterator GetOperatorEnd() const = 0;
 
 public:
 
@@ -196,7 +193,7 @@ public:
      * 该方法返回数量包含Public，Protected和Private
      * @return
      */
-    virtual size_t GetDeclaredMethodCount() = 0;
+    virtual size GetDeclaredMethodCount() = 0;
 
     /**
      * @brief 返回指定名称和参数方法
@@ -210,15 +207,20 @@ public:
      * @brief 返回方法开始迭代器
      * @return
      */
-    virtual AMethodIterator DeclaredMethodBegin() = 0;
+    virtual AMethodIterator GetDeclaredMethodBegin() = 0;
 
     /**
      * @brief DeclaredMethodEnd
      * @return
      */
-    virtual AMethodIterator DeclaredMethodEnd() = 0;
+    virtual AMethodIterator GetDeclaredMethodEnd() = 0;
 
 public:
+
+    /**
+     *
+     */
+    virtual bool Contain(AClass *pAnnotationClass) = 0;
 
     /**
      * @brief GetAnnotation
@@ -231,42 +233,24 @@ public:
      * @brief AnnotationCount
      * @return
      */
-    virtual size_t GetAnnotationCount() = 0;
+    virtual size GetAnnotationCount() = 0;
 
     /**
      * @brief AnnotationBegin
      * @return
      */
-    virtual AAnnotationIterator AnnotationBegin() = 0;
+    virtual AAnnotationIterator GetAnnotationBegin() = 0;
 
     /**
      * @brief AnnotationEnd
      * @return
      */
-    virtual AAnnotationIterator AnnotationEnd() = 0;
+    virtual AAnnotationIterator GetAnnotationEnd() = 0;
 
 
 public:
 
-    /**
-     * @brief 测试类是不是虚的。
-     * 具有虚函数的类时虚的
-     * @return
-     */
-    virtual bool IsVirtual() const = 0;
-
-    /**
-     * @brief 测试类是不是接口
-     * 具有纯虚函数的类是接口
-     * @return
-     */
-    virtual bool IsAbstract() const = 0;
-
-    /**
-     * @brief IsPrimitive
-     * @return
-     */
-    virtual bool IsPrimitive() const = 0;
+    virtual bool CanInstance() = 0;
 
 public:
 

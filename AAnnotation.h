@@ -5,6 +5,10 @@
 
 namespace Anonymous {
 
+/**
+* @brief 注解类的基类
+* 所有注解类都要继承于该类
+*/
 class AAnnotation : public AObject
 {
     A_ANNOTATION()

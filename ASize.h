@@ -8,59 +8,72 @@ class ASizeInteger : public ANumber
     A_OBJECT()
 public:
 
-    /**
+       /**
      * @brief LongValue
      * @return
      */
-    virtual ALong* LongValue() const = 0;
+    virtual i8 ToI8() const = 0;
 
     /**
      * @brief IntegerValue
      * @return
      */
-    virtual AInteger* IntegerValue() const = 0;
+    virtual i16 ToI16() const = 0;
 
     /**
      * @brief ShortValue
      * @return
      */
-    virtual AShort* ShortValue() const = 0;
+    virtual i32 ToI32() const = 0;
 
+    /**
+     *
+     *
+     */
+    virtual i64 ToI64() const = 0;
+    
     /**
      * @brief LongValue
      * @return
      */
-    virtual AULong* ULongValue() const = 0;
+    virtual u8 ToU8() const = 0;
 
     /**
      * @brief IntegerValue
      * @return
      */
-    virtual AUInteger* UIntegerValue() const = 0;
+    virtual u16 ToU16() const = 0;
 
     /**
      * @brief ShortValue
      * @return
      */
-    virtual AUShort* UShortValue() const = 0;
+    virtual u32 ToU32() const = 0;
+
+    /**
+     *
+     *
+     */
+    virtual u64 ToU64() const = 0;
 
     /**
      * @brief Float
      * @return
      */
-    virtual AFloat* Float() const = 0;
+    virtual float ToFloat() const = 0;
 
     /**
      * @brief Double
      * @return
      */
-    virtual ADouble* Double() const = 0;
+    virtual double ToDouble() const = 0;
 
     /**
      * @brief SizeInteger
      * @return
      */
-    virtual ASizeInteger SizeInteger() = 0;
+    virtual size ToSize() = 0;
+
 };
 
 #endif // ASIZEINTEGER_H

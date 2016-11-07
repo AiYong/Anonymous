@@ -1,14 +1,36 @@
 #include "AObject.h"
 
+namespace Anonymous {
+
 AObject::AObject()
 {
+}
+
+AObject::AObject(AObject const&)
+{
+}
+
+
+AObject::AObject(AObject&&)
+{
+}
+
+
+AObject& AObject::operator=(AObject const&)
+{
+    return (*this);
+}
+
+
+AObject& AObject::operator=(AObject&&)
+{
+    return (*this);
 }
 
 AObject::~AObject()
 {
 }
 
-size_t AObject::HashCode()
-{
-    return size_t(reinterpret_cast<char*>(this));
+
 }
+

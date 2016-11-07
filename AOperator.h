@@ -1,18 +1,22 @@
-#ifndef AOPERATOR_H
-#define AOPERATOR_H
+#pragma once
 
 #include <initializer_list>
 
-#include "AObject.h"
-#include "AReturnValue.h"
+#include <Anonymous/AObject.h>
+#include <Anonymous/AReturnValue.h>
+
+namespace Anonymous {
 
 /**
- * @brief The AOperator class
+ * @brief 封装类的重载操作符函数
  */
 class AOperator : public AObject
 {
 public:
 
+    /**
+    *@brief 重载操作符类型
+    */
     enum OperatorType
     {
         CopyAssignment,
@@ -65,18 +69,18 @@ public:
     };
 
     /**
-     * @brief GetType
+     * @brief 返回封装的重载操作符类型
      * @return
      */
     virtual OperatorType GetType() const = 0;
 
     /**
-     * @brief Call
-     * @param Object
-     * @param ParamList
+     * @brief 调用重载操作符
+     * @param Object        要调用的对象
+     * @param ParamList     参数
      * @return
      */
     virtual AReturnValue Call(AObject *Object,std::initializer_list<AObject*> ParamList) = 0;
 };
 
-#endif // AOPERATOR_H
+}

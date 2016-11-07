@@ -1,21 +1,27 @@
-#ifndef APARAMETER_H
-#define APARAMETER_H
+#pragma once
 
-#include "AString.h"
+#include <Anonymous/AObject.h>
+#include <Anonymous/AString.h>
+
+namespace Anonymous {
 
 class AClass;
 
 /**
  * @brief The AParameter class
  */
-class AParameter
+class AParameter : public AObject
 {
+    A_OBJECT()
 public:
 
     /**
-     * @brief AParameter
+     * @brief 构造函数
+     * @param Name
+     * @param Class
+     * @param Modifiers
      */
-    AParameter();
+    AParameter(AString const& Name,AClass *Class,i32 Modifiers);
 
     /**
      * @brief ~AParameter
@@ -28,20 +34,25 @@ public:
      * @brief GetName
      * @return
      */
-    AString GetName() const;
+    AString const& GetName() const;
 
     /**
      * @brief GetType
      * @return
      */
-     AClass* GetType() const = 0;
+     AClass* GetType() const;
 
     /**
      * @brief GetModifiers
      * @return
      */
-    int GetModifiers() const;
+    i32 GetModifiers() const;
 
+private：
+
+    AString Name;
+    AClass  *Class;
+    i32     Modifiers;
 };
 
-#endif // APARAMETER_H
+}

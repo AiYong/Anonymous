@@ -1,11 +1,11 @@
-#ifndef AMETHOD_H
-#define AMETHOD_H
+#pragma once
 
 #include <initializer_list>
 
-#include "AObject.h"
-#include "AModifier.h"
-#include "AReturnValue.h"
+#include <Anonymous/AObject.h>
+#include <Anonymous/AReturnValue.h>
+
+namespace Anonymous {
 
 class AString;
 class AClass;
@@ -24,9 +24,9 @@ public:
 public:
 
     /**
-     * @brief ~Method
+     * @brief 析构函数
      */
-    virtual ~Method()
+    virtual ~AMethod()
     {
     }
 
@@ -54,28 +54,33 @@ public:
      * @brief GetParameterCount
      * @return
      */
-    virtual size_t GetParameterCount() const = 0;
+    virtual size GetParameterCount() const = 0;
 
     /**
      * @brief ParameterBegin
      * @return
      */
-    virtual AParameterIterator ParameterBegin() const = 0;
+    virtual AParameterIterator GetParameterBegin() const = 0;
 
     /**
      * @brief ParameterEnd
      * @return
      */
-    virtual AParameterIterator ParameterEnd() const = 0;
+    virtual AParameterIterator GetParameterEnd() const = 0;
 
 
 public:
 
     /**
+     * @brief 测试是否被指定注解类注解
+     */
+    virtual bool Contain(AClass *pAnnotationClass) = 0;
+
+    /**
      * @brief GetAnnotation
      * @return
      */
-    virtual size_t GetAnnotationCount() const = 0;
+    virtual size GetAnnotationCount() const = 0;
 
     /**
      * @brief GetAnnotation
@@ -88,13 +93,13 @@ public:
      * @brief AnnotationBegin
      * @return
      */
-    virtual AAnnotationIterator AnnotationBegin() const = 0;
+    virtual AAnnotationIterator GetAnnotationBegin() const = 0;
 
     /**
      * @brief AnnotationEnd
      * @return
      */
-    virtual AAnnotationIterator AnnotationEnd() const = 0;
+    virtual AAnnotationIterator GetAnnotationEnd() const = 0;
 
 public:
 
@@ -116,4 +121,4 @@ public:
 
 };
 
-#endif // AMETHOD_H
+}

@@ -3,27 +3,18 @@
 
 #include <initializer_list>
 
-/**
- *@brief 对象访问器主模板
- */
-template<typename T>
-class AObjectAccessor
-{
-};
-
-
 #define A_OBJECT() \
     template<typename T>\
     friend class AObjectAccessor;\
 public:\
-    virtual AClass* GetClass();\
+    static AClass* GetClass();\
     \
 
 #define A_ANNOTATION()\
     template<typename T>\
     friend class AObjectAccessor;\
 public:\
-    virtual AClass* GetClass();\
+    static AClass* GetClass();\
     \
 
 #define ANNOTATION_CLASS(...)   __attribute__((annotate(#__VA_ARGS__)))

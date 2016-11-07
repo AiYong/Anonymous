@@ -14,59 +14,71 @@ public:
 
 public:
 
-    /**
+   /**
      * @brief LongValue
      * @return
      */
-    virtual ALong* LongValue() const = 0;
+    virtual AI8* ToI8() const = 0;
 
     /**
      * @brief IntegerValue
      * @return
      */
-    virtual AInteger* IntegerValue() const = 0;
+    virtual AI16* ToI16() const = 0;
 
     /**
      * @brief ShortValue
      * @return
      */
-    virtual AShort* ShortValue() const = 0;
+    virtual AI32* ToI32() const = 0;
 
+    /**
+     *
+     *
+     */
+    virtual AI64* ToI64() const = 0;
+    
     /**
      * @brief LongValue
      * @return
      */
-    virtual AULong* ULongValue() const = 0;
+    virtual AU8* To*8() const = 0;
 
     /**
      * @brief IntegerValue
      * @return
      */
-    virtual AUInteger* UIntegerValue() const = 0;
+    virtual AU16* ToU16() const = 0;
 
     /**
      * @brief ShortValue
      * @return
      */
-    virtual AUShort* UShortValue() const = 0;
+    virtual AU32* ToU32() const = 0;
+
+    /**
+     *
+     *
+     */
+    virtual AU64* ToU64() const = 0;
 
     /**
      * @brief Float
      * @return
      */
-    virtual AFloat* Float() const = 0;
+    virtual AFloat* ToFloat() const = 0;
 
     /**
      * @brief Double
      * @return
      */
-    virtual ADouble* Double() const = 0;
+    virtual ADouble* ToDouble() const = 0;
 
     /**
      * @brief SizeInteger
      * @return
      */
-    virtual ASizeInteger SizeInteger() = 0;
+    virtual ASize* ToSize() = 0;
 
 };
 
