@@ -4,11 +4,106 @@
 
 namespace Anonymous {
 
-class AInteger : public ANumber
+class AI32 : public ANumber
 {
 public:
-    AInteger();
 
+    AI32();
+
+    AI32(i8 Value);
+
+    AI32(AI32 const& Other);
+
+    AI32& operator=(AI32 const& Other);
+
+    virtual ~AI32();
+
+public:
+
+    operator i32();
+
+public:
+
+    bool operator <(AI32 const& Other) const;
+
+    bool operator <=(AI32 const& Other) const;
+
+    bool operator >(AI32 const& Other) const;
+
+    bool operator >=(AI32 const& Other) const;
+
+    bool operator ==(AI32 const& Other) const;
+
+    bool operator !=(AI32 const& Other) const;
+
+public:
+
+    AI32& operator++();
+
+    AI32& operator--();
+
+    AI32 operator++(int);
+
+    AI32 operator--(int);
+
+public:
+
+    bool operator!(AI32 const& Other) const;
+
+    bool operator&&(AI32 const& Other) const;
+
+    bool operator||(AI32 const& Other) const;
+
+public:
+
+    AI32 operator+() const;
+
+    AI32 operator-() const;
+
+    AI32 operator+(AI32 const& Other) const;
+
+    AI32 operator-(AI32 const& Other) const;
+
+    AI32 operator*(AI32 const& Other) const;
+
+    AI32 operator/(AI32 const& Other) const;
+
+    AI32 operator%(AI32 const& Other) const;
+
+    AI32 operator~(AI32 const& Other) const;
+
+    AI32 operator&(AI32 const& Other) const;
+
+    AI32 operator|(AI32 const& Other) const;
+
+    AI32 operator^(AI32 const& Other) const;
+
+    AI32 operator<<(AI32 const& Other) const;
+
+    AI32 operator>>(AI32 const& Other) const;
+
+public:
+
+    AI32& operator+=(AI32 const& Other) const;
+
+    AI32& operator-=(AI32 const& Other) const;
+
+    AI32& operator*=(AI32 const& Other) const;
+
+    AI32& operator/=(AI32 const& Other) const;
+
+    AI32& operator%=(AI32 const& Other) const;
+
+    AI32& operator&=(AI32 const& Other) const;
+
+    AI32& operator|=(AI32 const& Other) const;
+
+    AI32& operator^=(AI32 const& Other) const;
+
+    AI32& operator<<=(AI32 const& Other) const;
+
+    AI32& operator>>=(AI32 const& Other) const;
+    
 public:
 
    virtual i8 ToI8() const ;

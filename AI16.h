@@ -11,8 +11,99 @@ public:
 
     AI16();
 
-    ~AI16();
+    AI16(i8 Value);
 
+    AI16(AI16 const& Other);
+
+    AI16& operator=(AI16 const& Other);
+
+    virtual ~AI16();
+
+public:
+
+    operator i16();
+
+public:
+
+    bool operator <(AI16 const& Other) const;
+
+    bool operator <=(AI16 const& Other) const;
+
+    bool operator >(AI16 const& Other) const;
+
+    bool operator >=(AI16 const& Other) const;
+
+    bool operator ==(AI16 const& Other) const;
+
+    bool operator !=(AI16 const& Other) const;
+
+public:
+
+    AI16& operator++();
+
+    AI16& operator--();
+
+    AI16 operator++(int);
+
+    AI16 operator--(int);
+
+public:
+
+    bool operator!(AI16 const& Other) const;
+
+    bool operator&&(AI16 const& Other) const;
+
+    bool operator||(AI16 const& Other) const;
+
+public:
+
+    AI16 operator+() const;
+
+    AI16 operator-() const;
+
+    AI16 operator+(AI16 const& Other) const;
+
+    AI16 operator-(AI16 const& Other) const;
+
+    AI16 operator*(AI16 const& Other) const;
+
+    AI16 operator/(AI16 const& Other) const;
+
+    AI16 operator%(AI16 const& Other) const;
+
+    AI16 operator~(AI16 const& Other) const;
+
+    AI16 operator&(AI16 const& Other) const;
+
+    AI16 operator|(AI16 const& Other) const;
+
+    AI16 operator^(AI16 const& Other) const;
+
+    AI16 operator<<(AI16 const& Other) const;
+
+    AI16 operator>>(AI16 const& Other) const;
+
+public:
+
+    AI16& operator+=(AI16 const& Other) const;
+
+    AI16& operator-=(AI16 const& Other) const;
+
+    AI16& operator*=(AI16 const& Other) const;
+
+    AI16& operator/=(AI16 const& Other) const;
+
+    AI16& operator%=(AI16 const& Other) const;
+
+    AI16& operator&=(AI16 const& Other) const;
+
+    AI16& operator|=(AI16 const& Other) const;
+
+    AI16& operator^=(AI16 const& Other) const;
+
+    AI16& operator<<=(AI16 const& Other) const;
+
+    AI16& operator>>=(AI16 const& Other) const;
 public:
 
     virtual i8 ToI8() const ;

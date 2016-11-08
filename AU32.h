@@ -4,15 +4,110 @@
 
 namespace Anonymous {
 
-class AUInteger : public ANumber
+class AU32 : public ANumber
 {
     A_OBJECT()
 public:
-    AUInteger();
+
+    AU32();
+
+    AU32(i8 Value);
+
+    AU32(AU32 const& Other);
+
+    AU32& operator=(AU32 const& Other);
+
+    virtual ~AU32();
 
 public:
 
-  virtual i8 ToI8() const ;
+    operator u32();
+
+public:
+
+    bool operator <(AU32 const& Other) const;
+
+    bool operator <=(AU32 const& Other) const;
+
+    bool operator >(AU32 const& Other) const;
+
+    bool operator >=(AU32 const& Other) const;
+
+    bool operator ==(AU32 const& Other) const;
+
+    bool operator !=(AU32 const& Other) const;
+
+public:
+
+    AU32& operator++();
+
+    AU32& operator--();
+
+    AU32 operator++(int);
+
+    AU32 operator--(int);
+
+public:
+
+    bool operator!(AU32 const& Other) const;
+
+    bool operator&&(AU32 const& Other) const;
+
+    bool operator||(AU32 const& Other) const;
+
+public:
+
+    AU32 operator+() const;
+
+    AU32 operator-() const;
+
+    AU32 operator+(AU32 const& Other) const;
+
+    AU32 operator-(AU32 const& Other) const;
+
+    AU32 operator*(AU32 const& Other) const;
+
+    AU32 operator/(AU32 const& Other) const;
+
+    AU32 operator%(AU32 const& Other) const;
+
+    AU32 operator~(AU32 const& Other) const;
+
+    AU32 operator&(AU32 const& Other) const;
+
+    AU32 operator|(AU32 const& Other) const;
+
+    AU32 operator^(AU32 const& Other) const;
+
+    AU32 operator<<(AU32 const& Other) const;
+
+    AU32 operator>>(AU32 const& Other) const;
+
+public:
+
+    AU32& operator+=(AU32 const& Other) const;
+
+    AU32& operator-=(AU32 const& Other) const;
+
+    AU32& operator*=(AU32 const& Other) const;
+
+    AU32& operator/=(AU32 const& Other) const;
+
+    AU32& operator%=(AU32 const& Other) const;
+
+    AU32& operator&=(AU32 const& Other) const;
+
+    AU32& operator|=(AU32 const& Other) const;
+
+    AU32& operator^=(AU32 const& Other) const;
+
+    AU32& operator<<=(AU32 const& Other) const;
+
+    AU32& operator>>=(AU32 const& Other) const;
+    
+public:
+
+    virtual i8 ToI8() const ;
 
     virtual i16 ToI16() const ;
 

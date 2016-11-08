@@ -1,5 +1,6 @@
 #pragma once
 
+#include <limits>
 #include <Anonymous/ANumber.h>
 
 namespace Anonymous {
@@ -9,25 +10,93 @@ class ADouble : public ANumber
     A_OBJECT()
 public:
 
-    static double MaxValue;
+    /**
+    *
+    */
+    static constexpr double MaxValue = std::numeric_limits<double>::max();
 
-    static double MinValue;
+    /**
+    *
+    */
+	static constexpr double MinValue = std::numeric_limits<double>::min();
 
-    static double MinNormal;
+    /**
+    *
+    */
+	static constexpr double MinNormal = std::numeric_limits<double>::denorm_min();
 
-    static i32 MaxExponet;
+    /**
+    *
+    */
+	static constexpr i32 MaxExponet = std::numeric_limits<double>::max_exponent;
 
-    static i32 MinExponet;
+    /**
+    *
+    */
+	static constexpr i32 MinExponet = std::numeric_limits<double>::min_exponent;
 
-    static double POSITIVE_INFINATE;
+    /**
+    *
+    */
+	static constexpr i32 MaxExponet10 = std::numeric_limits<double>::max_exponent10;
 
-    static double NEGATIVE_INFINATE;
+    /**
+    *
+    */
+	static constexpr i32 MinExponet10 = std::numeric_limits<double>::min_exponent10;
 
-    static double SNAN;
+    /**
+    *
+    */
+	static constexpr double PositiveInfinate = std::numeric_limits<double>::infinity();
 
-    static double QNAN;
+    /**
+    *
+    */
+	static constexpr double NegativeInfinate = -1 * PositiveInfinate;
 
-    static i32 Digits; 
+    /**
+    *
+    */
+	static constexpr double SignalingNan = std::numeric_limits<double>::signaling_NaN();
+
+    /**
+    *
+    */
+	static constexpr double QuietNan = std::numeric_limits<double>::quiet_NaN();
+
+    /**
+    *
+    */
+	static constexpr i32 Digits = std::numeric_limits<double>::digits;
+
+    /**
+    *
+    */
+	static constexpr i32 Digits10 = std::numeric_limits<double>::digits10;
+
+    /**
+    *
+    */
+	static constexpr double Epsilon = std::numeric_limits<double>::epsilon();
+
+public:
+
+    static double Parse(AString const& ValueString);
+
+public:
+
+    static bool IsInfinite(double Value);
+
+    static bool IsNan(double Value);
+
+    static double I64BitsToDouble(i64 Value);
+
+    static double U64BitsToDouble(u64 Value);
+
+    static i64 DoubleToI64Bits() ;
+
+    static u64 DoubleToU64Bits();
 
 public:
 
@@ -43,6 +112,67 @@ public:
 
 public:
 
+    inline operator double();
+
+public:
+
+    bool operator <(ADouble const& Other) const;
+
+    bool operator <=(ADouble const& Other) const;
+
+    bool operator >(ADouble const& Other) const;
+
+    bool operator >=(ADouble const& Other) const;
+
+    bool operator ==(ADouble const& Other) const;
+
+    bool operator !=(ADouble const& Other) const;
+
+public:
+
+    ADouble& operator++();
+
+    ADouble& operator--();
+
+    ADouble operator++(int);
+
+    ADouble operator--(int);
+
+public:
+
+    bool operator!() const;
+
+    bool operator&&(ADouble const& Other) const;
+
+    bool operator||(ADouble const& Other) const;
+
+public:
+
+    ADouble operator+() const;
+
+    ADouble operator-() const;
+
+    ADouble operator+(ADouble const& Other) const;
+
+    ADouble operator-(ADouble const& Other) const;
+
+    ADouble operator*(ADouble const& Other) const;
+
+    ADouble operator/(ADouble const& Other) const;
+
+    ADouble operator%(ADouble const& Other) const;
+
+public:
+
+    ADouble& operator+=(ADouble const& Other) const;
+
+    ADouble& operator-=(ADouble const& Other) const;
+
+    ADouble& operator*=(ADouble const& Other) const;
+
+    ADouble& operator/=(ADouble const& Other) const;
+
+    ADouble& operator%=(ADouble const& Other) const;
 
 public:
 
@@ -62,7 +192,7 @@ public:
 
     virtual u64 ToU64() const ;
 
-    virtual float ToFloat() const ;
+    virtual float ToDouble() const ;
 
     virtual double ToDouble() const ;
 
@@ -70,6 +200,13 @@ public:
 
 public:
 
+    bool IsInfinite() const;
+
+    bool IsNan() const;
+
+private:
+
+    double Value;
 
 };
 

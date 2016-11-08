@@ -4,12 +4,110 @@
 
 namespace Anonymous {
 
-class ASizeInteger : public ANumber
+class ASize : public ANumber
 {
     A_OBJECT()
 public:
 
-      virtual i8 ToI8() const ;
+    ASize();
+
+    ASize(i8 Value);
+
+    ASize(ASize const& Other);
+
+    ASize& operator=(ASize const& Other);
+
+    virtual ~ASize();
+
+public:
+
+    operator size();
+
+public:
+
+    bool operator <(ASize const& Other) const;
+
+    bool operator <=(ASize const& Other) const;
+
+    bool operator >(ASize const& Other) const;
+
+    bool operator >=(ASize const& Other) const;
+
+    bool operator ==(ASize const& Other) const;
+
+    bool operator !=(ASize const& Other) const;
+
+public:
+
+    ASize& operator++();
+
+    ASize& operator--();
+
+    ASize operator++(int);
+
+    ASize operator--(int);
+
+public:
+
+    bool operator!(ASize const& Other) const;
+
+    bool operator&&(ASize const& Other) const;
+
+    bool operator||(ASize const& Other) const;
+
+public:
+
+    ASize operator+() const;
+
+    ASize operator-() const;
+
+    ASize operator+(ASize const& Other) const;
+
+    ASize operator-(ASize const& Other) const;
+
+    ASize operator*(ASize const& Other) const;
+
+    ASize operator/(ASize const& Other) const;
+
+    ASize operator%(ASize const& Other) const;
+
+    ASize operator~(ASize const& Other) const;
+
+    ASize operator&(ASize const& Other) const;
+
+    ASize operator|(ASize const& Other) const;
+
+    ASize operator^(ASize const& Other) const;
+
+    ASize operator<<(ASize const& Other) const;
+
+    ASize operator>>(ASize const& Other) const;
+
+public:
+
+    ASize& operator+=(ASize const& Other) const;
+
+    ASize& operator-=(ASize const& Other) const;
+
+    ASize& operator*=(ASize const& Other) const;
+
+    ASize& operator/=(ASize const& Other) const;
+
+    ASize& operator%=(ASize const& Other) const;
+
+    ASize& operator&=(ASize const& Other) const;
+
+    ASize& operator|=(ASize const& Other) const;
+
+    ASize& operator^=(ASize const& Other) const;
+
+    ASize& operator<<=(ASize const& Other) const;
+
+    ASize& operator>>=(ASize const& Other) const;
+    
+public:
+
+    virtual i8 ToI8() const ;
 
     virtual i16 ToI16() const ;
 
