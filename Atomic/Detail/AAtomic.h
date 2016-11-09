@@ -1,5 +1,5 @@
 #pragma once
-#include <Anonymous/AObject>
+#include <Anonymous/AObject.h>
 #include <Anonymous/Atomic/AAtomicOperation.h>
 
 namespace Anonymous {

@@ -1,13 +1,10 @@
-#ifndef AREFCOUNT_H
-#define AREFCOUNT_H
+#pragma once
 
-#include "AObject.h"
+#include <Anonymous/AObject.h>
 
+namespace Anonymous {
 
-
-
-
-class ASharedCountBase
+class ASharedCountBase : public AObject
 {
 public:
 
@@ -38,6 +35,7 @@ private:
     int UseCount;
 };
 
+
 class APSharedCount : public ASharedCountBase
 {
 public:
@@ -64,4 +62,6 @@ public:
 private:
     ASharedCountBase *Shared;
 };
-#endif // AREFCOUNT_H
+
+}
+
